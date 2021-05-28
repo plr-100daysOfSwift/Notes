@@ -13,9 +13,9 @@
 		DA9F45B52661AB1400F04CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA9F45B32661AB1400F04CE8 /* Main.storyboard */; };
 		DA9F45B72661AB1500F04CE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA9F45B62661AB1500F04CE8 /* Assets.xcassets */; };
 		DA9F45BA2661AB1500F04CE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA9F45B82661AB1500F04CE8 /* LaunchScreen.storyboard */; };
-		DA9F45C52661AB1500F04CE8 /* NotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45C42661AB1500F04CE8 /* NotesTests.swift */; };
 		DA9F45D02661AB1500F04CE8 /* NotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45CF2661AB1500F04CE8 /* NotesUITests.swift */; };
 		DA9F45DE2661AB2800F04CE8 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DA9F45DD2661AB2800F04CE8 /* README.md */; };
+		DA9F45ED2661B77700F04CE8 /* NoteModelValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45EC2661B77700F04CE8 /* NoteModelValidatorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,12 +45,12 @@
 		DA9F45B92661AB1500F04CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA9F45BB2661AB1500F04CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA9F45C02661AB1500F04CE8 /* NotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA9F45C42661AB1500F04CE8 /* NotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTests.swift; sourceTree = "<group>"; };
 		DA9F45C62661AB1500F04CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA9F45CB2661AB1500F04CE8 /* NotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9F45CF2661AB1500F04CE8 /* NotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesUITests.swift; sourceTree = "<group>"; };
 		DA9F45D12661AB1500F04CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA9F45DD2661AB2800F04CE8 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DA9F45EC2661B77700F04CE8 /* NoteModelValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModelValidatorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,8 +116,8 @@
 		DA9F45C32661AB1500F04CE8 /* NotesTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA9F45C42661AB1500F04CE8 /* NotesTests.swift */,
 				DA9F45C62661AB1500F04CE8 /* Info.plist */,
+				DA9F45EC2661B77700F04CE8 /* NoteModelValidatorTests.swift */,
 			);
 			path = NotesTests;
 			sourceTree = "<group>";
@@ -201,6 +201,7 @@
 					};
 					DA9F45BF2661AB1500F04CE8 = {
 						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
 						TestTargetID = DA9F45A92661AB1400F04CE8;
 					};
 					DA9F45CA2661AB1500F04CE8 = {
@@ -272,7 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA9F45C52661AB1500F04CE8 /* NotesTests.swift in Sources */,
+				DA9F45ED2661B77700F04CE8 /* NoteModelValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +479,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UC6H82UP9B;
 				INFOPLIST_FILE = NotesTests/Info.plist;
@@ -489,6 +491,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.plrichardson.NotesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Notes.app/Notes";
@@ -500,6 +503,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UC6H82UP9B;
 				INFOPLIST_FILE = NotesTests/Info.plist;
