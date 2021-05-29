@@ -9,13 +9,21 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-	var notes = [Note]()
+	var notes: Notes?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
 		title = "Notes"
 
+		if notes == nil {
+			var dummyNotes: [Note] = []
+			let dummyNote = Note(title: "A New Note")
+			dummyNotes.append(dummyNote)
+			notes = Notes(notes: dummyNotes)
+		}
+
+	}
 	}
 
 }

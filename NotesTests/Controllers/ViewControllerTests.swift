@@ -24,11 +24,16 @@ class ViewControllerTests: XCTestCase {
 		let storyboard = UIStoryboard(name: "Main", bundle: nil)
 		let sut = storyboard.instantiateViewController(identifier: "ViewController") as? ViewController
 
+		var dummyNotes: [Note] = []
+		let dummyNote = Note(title: "A New Note")
+		dummyNotes.append(dummyNote)
+		sut?.notes = Notes(notes: dummyNotes)
+
 		// Act
 		let notes = sut?.notes
 
 		// Assert
-		XCTAssertTrue(type(of: notes) == [Note]?.self, "The notes property should be of type [Note]")
+		XCTAssertTrue(type(of: notes) == Notes?.self, "The notes property should be of type Notes?")
 		XCTAssertNotNil(notes, "View Controller should contain a notes property but returned NIL")
 
 	}
