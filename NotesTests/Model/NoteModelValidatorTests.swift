@@ -32,4 +32,19 @@ class NoteModelValidatorTests: XCTestCase {
 		// Assert
 		XCTAssertTrue(isTitleValid, "isTitleValid() should return TRUE for a non-empty title but returned FALSE")
 	}
+
+	func testNoteModelValidator_WhenInvalidTitleIsProvided_ShouldReturnFalse() {
+
+		// Arrange
+		let title = ""
+		let note = Note(title: title)
+
+		// Act
+		let isTitleValid = sut.isTitleValid(title: note.title)
+
+		// Assert
+		XCTAssertFalse(isTitleValid, "isTitleValid should return FALSE for an empty title but returned TRUE")
+
+	}
+
 }
