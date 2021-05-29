@@ -18,6 +18,7 @@
 		DA9F45ED2661B77700F04CE8 /* NoteModelValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45EC2661B77700F04CE8 /* NoteModelValidatorTests.swift */; };
 		DA9F45EF2661B80C00F04CE8 /* NoteModelValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45EE2661B80C00F04CE8 /* NoteModelValidator.swift */; };
 		DA9F45F32661BBC400F04CE8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45F22661BBC400F04CE8 /* Note.swift */; };
+		DA9F45F52661C05C00F04CE8 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45F42661C05C00F04CE8 /* ViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		DA9F45EC2661B77700F04CE8 /* NoteModelValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModelValidatorTests.swift; sourceTree = "<group>"; };
 		DA9F45EE2661B80C00F04CE8 /* NoteModelValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModelValidator.swift; sourceTree = "<group>"; };
 		DA9F45F22661BBC400F04CE8 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		DA9F45F42661C05C00F04CE8 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				DA9F45C62661AB1500F04CE8 /* Info.plist */,
+				DA9F45F62661C08800F04CE8 /* Controllers */,
 				DA9F45F12661BB0800F04CE8 /* Model */,
 			);
 			path = NotesTests;
@@ -151,6 +154,14 @@
 				DA9F45EC2661B77700F04CE8 /* NoteModelValidatorTests.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DA9F45F62661C08800F04CE8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DA9F45F42661C05C00F04CE8 /* ViewControllerTests.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA9F45F52661C05C00F04CE8 /* ViewControllerTests.swift in Sources */,
 				DA9F45ED2661B77700F04CE8 /* NoteModelValidatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

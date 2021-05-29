@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UITableViewController {
 
+	var notes = [Note]()
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -17,4 +19,3 @@ class ViewController: UITableViewController {
 	}
 
 }
-
