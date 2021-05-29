@@ -24,6 +24,18 @@ class ViewController: UITableViewController {
 		}
 
 	}
+
+	// MARK:- Table View Data Methods
+
+	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return notes?.notes.count ?? 0
+	}
+
+	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let notes = notes?.notes
+		let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell", for: indexPath)
+		cell.textLabel?.text = notes?[indexPath.row].title
+		return cell
 	}
 
 }
