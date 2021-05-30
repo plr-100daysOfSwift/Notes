@@ -15,6 +15,8 @@ class DetailViewController: UIViewController {
 		super.viewDidLoad()
 		view.backgroundColor = .white
 
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(save))
+
 		let titleTextField = UITextField()
 		if let noteTitle = noteTitle {
 			titleTextField.text = noteTitle
@@ -30,6 +32,10 @@ class DetailViewController: UIViewController {
 
 		NSLayoutConstraint.activate(constraints)
 
+	}
+
+	@objc func save() {
+		//
 	}
 
 }
