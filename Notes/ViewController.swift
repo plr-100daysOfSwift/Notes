@@ -29,9 +29,6 @@ class ViewController: UITableViewController {
 			if let decodedData = try? decoder.decode([Note].self, from: encodedData) {
 				notes = decodedData
 			}
-		} else {
-			notes = [Note.placeholder]
-			save()
 		}
 	}
 
