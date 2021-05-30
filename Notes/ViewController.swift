@@ -33,9 +33,9 @@ class ViewController: UITableViewController {
 	}
 
 	fileprivate func save() {
-		let defaults = UserDefaults.standard
 		let encoder = JSONEncoder()
 		if let encodedData = try? encoder.encode(notes) {
+			let defaults = UserDefaults.standard
 			defaults.set(encodedData, forKey: UserDefaultsNotesKey)
 		}
 	}
