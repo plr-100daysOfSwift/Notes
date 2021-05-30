@@ -8,5 +8,11 @@
 import Foundation
 
 struct Note {
+	
 	var title: String
+
+	static var placeholder: Note {
+		return Note(title: "My First Note")
+	}
+	
 }

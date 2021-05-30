@@ -23,10 +23,8 @@ class ViewController: UITableViewController {
 	}
 
 	fileprivate func loadNotes() {
-		var dummyNotes: [Note] = []
-		let dummyNote = Note(title: "A New Note")
-		dummyNotes.append(dummyNote)
-		notes = dummyNotes
+		notes? = []
+		notes?.append(Note.placeholder)
 	}
 
 	// MARK:- Table View Data Methods

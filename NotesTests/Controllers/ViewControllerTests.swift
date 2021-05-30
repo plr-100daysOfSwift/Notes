@@ -26,7 +26,7 @@ class ViewControllerTests: XCTestCase {
 
 		// Act
 		var notes: [Note] = []
-		let dummyNote = Note(title: "A New Note")
+		let dummyNote = Note.placeholder
 		notes.append(dummyNote)
 		sut?.notes = notes
 
