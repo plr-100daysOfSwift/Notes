@@ -25,9 +25,8 @@ class ViewControllerTests: XCTestCase {
 		let sut = storyboard.instantiateViewController(identifier: "ViewController") as? ViewController
 
 		// Act
-		var notes: [Note] = []
-		let dummyNote = Note.placeholder
-		notes.append(dummyNote)
+		let placeholder = Note.placeholder
+		let notes = [placeholder]
 		sut?.notes = notes
 
 		// Assert
