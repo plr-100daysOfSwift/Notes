@@ -47,7 +47,16 @@ class ViewController: UITableViewController {
 	}
 
 	@objc fileprivate func compose() {
-		
+		let vc = DetailViewController()
+		let placeholder = Note.placeholder
+		vc.noteTitle = placeholder.title
+		if let _ = notes?.count {
+			notes?.insert(placeholder, at: 0)
+		} else {
+			notes = [placeholder]
+		}
+		tableView.reloadData()
+		navigationController?.pushViewController(vc, animated: true)
 	}
 
 	// MARK:- Table View Data Methods
