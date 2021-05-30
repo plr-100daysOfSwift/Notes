@@ -43,4 +43,12 @@ class ViewController: UITableViewController {
 		return cell
 	}
 
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let vc = DetailViewController()
+		if let title = notes?[indexPath.row].title {
+			vc.noteTitle = title
+		}
+		navigationController?.pushViewController(vc, animated: true)
+	}
+
 }
