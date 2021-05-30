@@ -17,6 +17,11 @@ class ViewController: UITableViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		title = "Notes"
 
+		let space = UIBarButtonItem(systemItem: .flexibleSpace)
+		let compose = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(compose))
+		setToolbarItems([space, compose], animated: true)
+		navigationController?.isToolbarHidden = false
+
 		if notes == nil {
 			loadNotes()
 		}
@@ -39,6 +44,10 @@ class ViewController: UITableViewController {
 			let defaults = UserDefaults.standard
 			defaults.set(encodedData, forKey: UserDefaultsNotesKey)
 		}
+	}
+
+	@objc fileprivate func compose() {
+		
 	}
 
 	// MARK:- Table View Data Methods
