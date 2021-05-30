@@ -23,8 +23,24 @@ class ViewController: UITableViewController {
 	}
 
 	fileprivate func loadNotes() {
-		notes? = []
-		notes?.append(Note.placeholder)
+		let defaults = UserDefaults.standard
+		if let encodedData = defaults.data(forKey: UserDefaultsNotesKey) {
+			let decoder = JSONDecoder()
+			if let decodedData = try? decoder.decode([Note].self, from: encodedData) {
+				notes = decodedData
+			}
+		} else {
+			notes = [Note.placeholder]
+			save()
+		}
+	}
+
+	fileprivate func save() {
+		let defaults = UserDefaults.standard
+		let encoder = JSONEncoder()
+		if let encodedData = try? encoder.encode(notes) {
+			defaults.set(encodedData, forKey: UserDefaultsNotesKey)
+		}
 	}
 
 	// MARK:- Table View Data Methods

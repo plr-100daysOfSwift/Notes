@@ -20,6 +20,7 @@
 		DA9F45F32661BBC400F04CE8 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45F22661BBC400F04CE8 /* Note.swift */; };
 		DA9F45F52661C05C00F04CE8 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45F42661C05C00F04CE8 /* ViewControllerTests.swift */; };
 		DA9F45FC2663030000F04CE8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45FB2663030000F04CE8 /* DetailViewController.swift */; };
+		DA9F45FE26632D3300F04CE8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9F45FD26632D3300F04CE8 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		DA9F45F22661BBC400F04CE8 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		DA9F45F42661C05C00F04CE8 /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
 		DA9F45FB2663030000F04CE8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		DA9F45FD26632D3300F04CE8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				DA9F45B82661AB1500F04CE8 /* LaunchScreen.storyboard */,
 				DA9F45BB2661AB1500F04CE8 /* Info.plist */,
 				DA9F45F02661BAFB00F04CE8 /* Model */,
+				DA9F45FD26632D3300F04CE8 /* Constants.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				DA9F45EF2661B80C00F04CE8 /* NoteModelValidator.swift in Sources */,
 				DA9F45B22661AB1400F04CE8 /* ViewController.swift in Sources */,
 				DA9F45AE2661AB1400F04CE8 /* AppDelegate.swift in Sources */,
+				DA9F45FE26632D3300F04CE8 /* Constants.swift in Sources */,
 				DA9F45B02661AB1400F04CE8 /* SceneDelegate.swift in Sources */,
 				DA9F45FC2663030000F04CE8 /* DetailViewController.swift in Sources */,
 			);
