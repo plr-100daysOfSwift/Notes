@@ -16,7 +16,9 @@ class DetailViewController: UIViewController {
 		view.backgroundColor = .white
 
 		let titleTextField = UITextField()
-		titleTextField.text = noteTitle ?? "My New Note"
+		if let noteTitle = noteTitle {
+			titleTextField.text = noteTitle
+		}
 		titleTextField.sizeToFit()
 		titleTextField.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(titleTextField)
