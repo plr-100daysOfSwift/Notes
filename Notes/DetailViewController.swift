@@ -44,8 +44,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 	}
 
 	@objc func endEditing() {
-		noteTextView.resignFirstResponder()
 		note?.text = noteTextView.text
+		noteTextView.resignFirstResponder()
 	}
 
 	func textViewDidEndEditing(_ textView: UITextView) {
