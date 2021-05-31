@@ -9,10 +9,14 @@ import Foundation
 
 struct Note: Codable {
 	
-	var title: String
+	var text: String
+
+	var title: String {
+		return text.components(separatedBy: "\n").first ?? ""
+	}
 
 	static var placeholder: Note {
-		return Note(title: "My First Note")
+		return Note(text: "New Note")
 	}
 	
 }
