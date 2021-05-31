@@ -33,7 +33,7 @@ class ViewController: UITableViewController {
 
 	fileprivate func loadNotes() {
 		let defaults = UserDefaults.standard
-		if let encodedData = defaults.data(forKey: UserDefaultsNotesKey) {
+		if let encodedData = defaults.data(forKey: .Notes) {
 			let decoder = JSONDecoder()
 			if let decodedData = try? decoder.decode([Note].self, from: encodedData) {
 				notes = decodedData
@@ -45,7 +45,7 @@ class ViewController: UITableViewController {
 		let encoder = JSONEncoder()
 		if let encodedData = try? encoder.encode(notes) {
 			let defaults = UserDefaults.standard
-			defaults.set(encodedData, forKey: UserDefaultsNotesKey)
+			defaults.set(encodedData, forKey: .Notes)
 		}
 	}
 
