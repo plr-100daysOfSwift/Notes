@@ -49,7 +49,7 @@ class ViewController: UITableViewController {
 	@objc fileprivate func compose() {
 		let vc = DetailViewController()
 		let placeholder = Note.placeholder
-		vc.noteTitle = placeholder.title
+		vc.note = placeholder
 		if let _ = notes?.count {
 			notes?.insert(placeholder, at: 0)
 		} else {
@@ -75,8 +75,8 @@ class ViewController: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let vc = DetailViewController()
-		if let title = notes?[indexPath.row].title {
-			vc.noteTitle = title
+		if let note = notes?[indexPath.row] {
+			vc.note = note
 		}
 		navigationController?.pushViewController(vc, animated: true)
 	}

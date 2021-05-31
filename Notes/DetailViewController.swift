@@ -10,7 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
 
 	@IBOutlet var noteTextView: UITextView!
-	var noteText: String?
+	var note: Note?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -20,10 +20,9 @@ class DetailViewController: UIViewController {
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(save))
 
 		noteTextView = UITextView()
-		noteTextView.backgroundColor = .green
-		if let noteTitle = noteText {
-			noteTextView.text = noteTitle
 		noteTextView.font = UIFont.preferredFont(forTextStyle: .body)
+		if let noteText = note?.text {
+			noteTextView.text = noteText
 		}
 		noteTextView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(noteTextView)
