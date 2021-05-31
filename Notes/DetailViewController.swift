@@ -45,10 +45,13 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 
 	@objc func endEditing() {
 		noteTextView.resignFirstResponder()
+		note?.text = noteTextView.text
 	}
 
 	func textViewDidEndEditing(_ textView: UITextView) {
-
+		let notificationCenter = NotificationCenter.default
+		let notification = Notification(name: .noteTextViewDidEndEditing, object: nil, userInfo: ["note": note as Any])
+		notificationCenter.post(notification)
 	}
 
 	@objc func adjustForKeyboard(notification: Notification) {
