@@ -35,8 +35,8 @@ class NoteModelValidatorTests: XCTestCase {
 	func testNoteModelValidator_WhenInvalidTitleIsProvided_ShouldReturnFalse() {
 
 		// Arrange
-		let title = ""
-		let note = Note(title: title)
+		let text = ""
+		let note = Note(text: text)
 
 		// Act
 		let isTitleValid = sut.isTitleValid(title: note.title)
