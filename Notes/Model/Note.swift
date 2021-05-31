@@ -8,7 +8,8 @@
 import Foundation
 
 struct Note: Codable {
-	
+
+	var id: UUID = UUID()
 	var text: String
 
 	var title: String {
