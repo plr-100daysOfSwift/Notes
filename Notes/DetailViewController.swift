@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextViewDelegate {
 
 	@IBOutlet var noteTextView: UITextView!
 	var note: Note?
@@ -17,9 +17,10 @@ class DetailViewController: UIViewController {
 		view.backgroundColor = .white
 		navigationController?.navigationBar.prefersLargeTitles = false
 
-		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(save))
+		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(endEditing))
 
 		noteTextView = UITextView()
+		noteTextView.delegate = self
 		noteTextView.font = UIFont.preferredFont(forTextStyle: .body)
 		if let noteText = note?.text {
 			noteTextView.text = noteText
@@ -42,8 +43,12 @@ class DetailViewController: UIViewController {
 
 	}
 
-	@objc func save() {
-		//
+	@objc func endEditing() {
+		noteTextView.resignFirstResponder()
+	}
+
+	func textViewDidEndEditing(_ textView: UITextView) {
+
 	}
 
 	@objc func adjustForKeyboard(notification: Notification) {
