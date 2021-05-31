@@ -26,6 +26,9 @@ class ViewController: UITableViewController {
 			loadNotes()
 		}
 
+		let notificationCenter = NotificationCenter.default
+		notificationCenter.addObserver(self, selector: #selector(noteDidChange), name: .noteTextViewDidEndEditing, object: nil)
+
 	}
 
 	fileprivate func loadNotes() {
@@ -57,6 +60,15 @@ class ViewController: UITableViewController {
 		}
 		tableView.reloadData()
 		navigationController?.pushViewController(vc, animated: true)
+	}
+
+	@objc func noteDidChange(notification: Notification) {
+		if let userInfo = notification.userInfo {
+			if let note = userInfo["note"] as? Note {
+				// do stuff
+				print("ID: \(note.id)")
+			}
+		}
 	}
 
 	// MARK:- Table View Data Methods
