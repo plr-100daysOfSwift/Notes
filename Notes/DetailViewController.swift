@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
 		noteTextView.backgroundColor = .green
 		if let noteTitle = noteText {
 			noteTextView.text = noteTitle
+		noteTextView.font = UIFont.preferredFont(forTextStyle: .body)
 		}
 		noteTextView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(noteTextView)
