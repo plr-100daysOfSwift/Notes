@@ -9,7 +9,8 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-	var noteTitle: String?
+	@IBOutlet var noteTextView: UITextView!
+	var noteText: String?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -17,17 +18,19 @@ class DetailViewController: UIViewController {
 
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(save))
 
-		let titleTextField = UITextField()
-		if let noteTitle = noteTitle {
-			titleTextField.text = noteTitle
+		noteTextView = UITextView()
+		noteTextView.backgroundColor = .green
+		if let noteTitle = noteText {
+			noteTextView.text = noteTitle
 		}
-		titleTextField.translatesAutoresizingMaskIntoConstraints = false
-		view.addSubview(titleTextField)
+		noteTextView.translatesAutoresizingMaskIntoConstraints = false
+		view.addSubview(noteTextView)
 
 		let constraints = [
-			titleTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-			titleTextField.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-			titleTextField.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+			noteTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+			noteTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+			noteTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
+			noteTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
 		]
 
 		NSLayoutConstraint.activate(constraints)
