@@ -64,9 +64,14 @@ class ViewController: UITableViewController {
 
 	@objc func noteDidChange(notification: Notification) {
 		if let userInfo = notification.userInfo {
-			if let note = userInfo["note"] as? Note {
-				// do stuff
-				print("ID: \(note.id)")
+			if let editedNote = userInfo["note"] as? Note {
+				if let index = notes?.firstIndex(where: { note in
+					note.id == editedNote.id
+				}) {
+					notes?[index] = editedNote
+				}
+				save()
+				tableView.reloadData()
 			}
 		}
 	}
