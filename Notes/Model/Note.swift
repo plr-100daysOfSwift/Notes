@@ -13,7 +13,7 @@ struct Note: Codable {
 	var text: String
 
 	var title: String {
-		return text.components(separatedBy: "\n").first ?? ""
+		return text.components(separatedBy: .newlines).first ?? ""
 	}
 
 	static var placeholder: Note {
