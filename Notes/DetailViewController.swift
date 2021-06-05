@@ -21,10 +21,15 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 
 		noteTextView = UITextView()
 		noteTextView.delegate = self
-		noteTextView.font = UIFont.preferredFont(forTextStyle: .body)
+
 		if let noteText = note?.text {
-			noteTextView.text = noteText
+			let attributedString = NSMutableAttributedString(string: noteText, attributes: [.font: UIFont.preferredFont(forTextStyle: .body)])
+			if let firstParagraphIndex = noteText.components(separatedBy: .newlines).first?.count {
+			attributedString.addAttribute(.font, value: UIFont.preferredFont(forTextStyle: .largeTitle), range: NSRange(location: 0, length: firstParagraphIndex))
+			}
+			noteTextView.attributedText = attributedString
 		}
+
 		noteTextView.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(noteTextView)
 
