@@ -16,8 +16,13 @@ struct Note: Codable {
 		return text.components(separatedBy: .newlines).first ?? ""
 	}
 
+	static var placeholderText = """
+		New Note
+		This is a new note.
+		"""
+
 	static var placeholder: Note {
-		return Note(text: "New Note")
+		return Note(text: placeholderText)
 	}
-	
+
 }
