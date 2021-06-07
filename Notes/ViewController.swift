@@ -9,7 +9,22 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-	var notes: [Note]?
+	var items: UIBarButtonItem!
+
+	var notes: [Note]? {
+		didSet {
+			if let _ = items {
+				self.items.title = itemCountText
+			}
+		}
+	}
+
+	var itemCountText: String {
+		if let count = notes?.count {
+			return "\(count) " + (count == 1 ? "Note" : "Notes")
+		}
+		return ""
+	}
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -17,14 +32,20 @@ class ViewController: UITableViewController {
 		navigationController?.navigationBar.prefersLargeTitles = true
 		title = "Notes"
 
-		let space = UIBarButtonItem(systemItem: .flexibleSpace)
-		let compose = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(compose))
-		setToolbarItems([space, compose], animated: true)
-		navigationController?.isToolbarHidden = false
-
 		if notes == nil {
 			loadNotes()
 		}
+
+		let space = UIBarButtonItem(systemItem: .flexibleSpace)
+		let compose = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(compose))
+
+		items = UIBarButtonItem(title: itemCountText, style: .plain, target: nil, action: nil)
+		let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote)]
+		items.setTitleTextAttributes(attributes, for: .normal)
+		// TODO: Disable user interaction
+
+		setToolbarItems([space, items, space, compose], animated: true)
+		navigationController?.isToolbarHidden = false
 
 		let notificationCenter = NotificationCenter.default
 		notificationCenter.addObserver(self, selector: #selector(noteDidChange), name: .noteTextViewDidEndEditing, object: nil)
