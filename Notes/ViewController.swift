@@ -13,17 +13,14 @@ class ViewController: UITableViewController {
 
 	var notes: [Note]? {
 		didSet {
-			if let _ = items {
-				self.items.title = itemCountText
-			}
+			guard let _ = items  else { return }
+			self.items.title = itemCountText
 		}
 	}
 
 	var itemCountText: String {
-		if let count = notes?.count {
-			return "\(count) " + (count == 1 ? "Note" : "Notes")
-		}
-		return ""
+		guard let count = notes?.count else { return "" }
+		return "\(count) " + (count == 1 ? "Note" : "Notes")
 	}
 
 	override func viewDidLoad() {
