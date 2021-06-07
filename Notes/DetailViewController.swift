@@ -15,7 +15,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = .white
-		navigationController?.navigationBar.prefersLargeTitles = false
+		navigationItem.largeTitleDisplayMode = .never
 
 		navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(endEditing))
 
