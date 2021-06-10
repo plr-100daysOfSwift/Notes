@@ -49,6 +49,19 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 
 	}
 
+
+	override func viewWillDisappear(_ animated: Bool) {
+		if noteTextView.isFirstResponder {
+			endEditing()
+		}
+		if let note = note, note.isPlaceholder == true {
+			delegate?.didLeavePlaceholderUnchanged(note)
+		}
+		super.viewWillDisappear(animated)
+	}
+
+	// MARK:-
+
 	@objc func endEditing() {
 		note?.text = noteTextView.text
 		noteTextView.resignFirstResponder()
