@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UITableViewController, DetailViewControllerDelegate {
 
 	var items: UIBarButtonItem!
 
@@ -73,6 +73,7 @@ class ViewController: UITableViewController {
 		let vc = DetailViewController()
 		let placeholder = Note.placeholder
 		vc.note = placeholder
+		vc.delegate = self
 		if let _ = notes?.count {
 			notes?.insert(placeholder, at: 0)
 		} else {
@@ -112,6 +113,7 @@ class ViewController: UITableViewController {
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		let vc = DetailViewController()
+		vc.delegate = self
 		if let note = notes?[indexPath.row] {
 			vc.note = note
 		}
@@ -126,6 +128,15 @@ class ViewController: UITableViewController {
 			save()
 		default:
 			break
+		}
+	}
+
+	// MARK:- DetailViewController Delegate Methods
+
+	func didLeavePlaceholderUnchanged(_ note: Note) {
+		if let index = notes?.firstIndex(where: {$0.id == note.id}) {
+			notes?.remove(at: index)
+			tableView.reloadData()
 		}
 	}
 
