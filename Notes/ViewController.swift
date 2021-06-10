@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UITableViewController, DetailViewControllerDelegate {
 
+	// MARK:- Properties
+
 	var items: UIBarButtonItem!
 
 	var notes: [Note]? {
@@ -22,6 +24,7 @@ class ViewController: UITableViewController, DetailViewControllerDelegate {
 		guard let count = notes?.count else { return "" }
 		return "\(count) " + (count == 1 ? "Note" : "Notes")
 	}
+ // MARK:- Life Cycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -50,6 +53,8 @@ class ViewController: UITableViewController, DetailViewControllerDelegate {
 		notificationCenter.addObserver(self, selector: #selector(noteDidChange), name: .noteTextViewDidEndEditing, object: nil)
 
 	}
+
+	// MARK:- Private Methods
 
 	fileprivate func loadNotes() {
 		let defaults = UserDefaults.standard
@@ -83,7 +88,7 @@ class ViewController: UITableViewController, DetailViewControllerDelegate {
 		navigationController?.pushViewController(vc, animated: true)
 	}
 
-	@objc func noteDidChange(notification: Notification) {
+	@objc fileprivate func noteDidChange(notification: Notification) {
 		if let userInfo = notification.userInfo {
 			if let editedNote = userInfo["note"] as? Note {
 				if let index = notes?.firstIndex(where: { note in

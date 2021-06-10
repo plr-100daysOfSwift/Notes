@@ -9,9 +9,13 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextViewDelegate {
 
+	// MARK:- Properties
+
 	@IBOutlet var noteTextView: UITextView!
 	var note: Note?
 	var delegate: DetailViewControllerDelegate?
+
+	// MARK:- Life Cycle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
