@@ -11,6 +11,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 
 	@IBOutlet var noteTextView: UITextView!
 	var note: Note?
+	var delegate: DetailViewControllerDelegate?
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
