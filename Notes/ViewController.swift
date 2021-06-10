@@ -37,9 +37,11 @@ class ViewController: UITableViewController {
 		let compose = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(compose))
 
 		items = UIBarButtonItem(title: itemCountText, style: .plain, target: nil, action: nil)
-		let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.preferredFont(forTextStyle: .footnote)]
-		items.setTitleTextAttributes(attributes, for: .normal)
-		// TODO: Disable user interaction
+		let attributes: [NSAttributedString.Key: Any] = [
+			.font: UIFont.preferredFont(forTextStyle: .footnote),
+			.foregroundColor: UIColor.label]
+		items.setTitleTextAttributes(attributes, for: .disabled)
+		items.isEnabled = false
 
 		setToolbarItems([space, items, space, compose], animated: true)
 		navigationController?.isToolbarHidden = false
